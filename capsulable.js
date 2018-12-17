@@ -1,33 +1,21 @@
-const capsule = require('./capsule')
+const Field = require('./src/field')
+const Packages = require('./src/packages')
 
-const _private = capsule('private')
-const _protectedStatic = capsule('protected-static')
+module.exports = (Origin)=>{
+    const field = Field()
 
-class Capsulable {
-    static check(origin){
+    if(Array.isArray(Origin)){
 
+        let packs = new Packages()
+        for(let OriginItem of Origin)
+            packs._load(OriginItem)
+
+        return packs
     }
-    static init(){
-        return 'let capsule = {};'
-            + 'super(capsule);'
-            + 'if(new.target != eval(this.constructor.name)) Capsulable.link(capsule, inherit);'
-            + 'module.exports = capsule;'
-    }
-    static link(capsule, inherit){
-        if(typeof capsule != 'object'
-            || typeof inherit != 'object') return Capsulable
 
-        for(let capsuleIndex of Object.keys(capsule))
-            inherit[capsuleIndex] = capsule[capsuleIndex]
-    }
-    constructor(inherit){
-        const _protected = capsule('protected')
-        if(typeof inherit === 'object'){
-            inherit.private = _private
-            inherit.protected = _protected
-            inherit.protectedStatic = _protectedStatic
+    return class Capsulable extends Origin {
+        constructor(){
+            super(field)
         }
     }
 }
-
-module.exports = Capsulable

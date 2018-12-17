@@ -1,8 +1,10 @@
 const A = require('./a')
+var field = null
 
 class B extends A{
-    constructor(){
-        //
+    constructor(inherit){
+        super(inherit)
+        field = inherit
     }
 }
 

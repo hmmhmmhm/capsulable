@@ -1,6 +1,6 @@
 // Codes that access store variables
 // should not be shared different class.
-const capsulable = require('../../capsule')
+const capsulable = require('../../src/capsule')
 const _private = capsulable('private')
 
 // It is dangerous to create a function

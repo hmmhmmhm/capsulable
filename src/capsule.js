@@ -3,7 +3,7 @@ const getUniqueId = (reference, store)=>{
     for(let storeItemIndex in store){
         let storeItem = store[storeItemIndex]
 
-        if(storeItem['reference'] === reference){
+        if(storeItem['reference'] === reference){ // TODO Symbol Improvement
             index = storeItemIndex
             break
         }
@@ -88,7 +88,7 @@ module.exports = (limitType = 'private')=>{
                 storedData[key] = data
 
                 store.push({
-                    reference,
+                    reference, // TODO Symbol Improvement
                     data: storedData
                 })
             }

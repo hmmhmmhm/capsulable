@@ -1,9 +1,8 @@
-const Capsulable = require('../../capsulable')
+var field = null
 
-class A extends Capsulable {
-    constructor(inherit={}){
-        let store = eval(Capsulable.init())
-        console.log(store)
+class A {
+    constructor(inherit){
+        field = inherit
     }
 }
 
