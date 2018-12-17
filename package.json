@@ -1,0 +1,14 @@
+{
+  "name": "capsulable",
+  "version": "1.0.0",
+  "description": "A module that helps developers easily encapsulate classes in nodejs.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./test/test.js"
+  },
+  "author": "hmmhmmhm",
+  "license": "MIT",
+  "devDependencies": {
+    "assert": "^1.4.1"
+  }
+}

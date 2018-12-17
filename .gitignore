@@ -1,0 +1,4 @@
+.vscode
+npm-*
+node_modules
+debug
