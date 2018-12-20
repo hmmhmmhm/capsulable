@@ -2,7 +2,7 @@
   "name": "capsulable",
   "version": "1.0.0",
   "description": "A module that helps developers easily encapsulate classes in nodejs.",
-  "main": "capsulable.js",
+  "main": "index.js",
   "scripts": {
     "test": "node ./test/test.js"
   },

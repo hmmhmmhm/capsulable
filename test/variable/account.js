@@ -7,15 +7,6 @@ const _private = capsulable('private')
 // in which the private variable is
 // freely accessible from the outside as a sample for testing.
 class Account {
-    /*
-    constructor(_inherit){
-        const _protected = capsulable('protected')
-        if(new.target != Account){
-            if(typeof _inherit === 'object')
-                _inherit._protected = _protected
-        }
-    }
-    */
     get(userName){
         return _private.get(this, userName)
     }
