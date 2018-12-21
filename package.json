@@ -7,8 +7,5 @@
     "test": "node ./test/test.js"
   },
   "author": "hmmhmmhm",
-  "license": "MIT",
-  "devDependencies": {
-    "assert": "^1.4.1"
-  }
+  "license": "MIT"
 }
