@@ -128,6 +128,7 @@ Protected Static 필드는 각 인스턴스와 공유된 공간을 가지며, �
 // B.js
 const Capsulable = require('capsulable')
 const A = require('./A')
+const Field = Capsulable()
 
 class B extends A {
     constructor(_field){
@@ -171,6 +172,7 @@ let sharedB = new SharedB()
 const Capsulable = require('./capsulable')
 const B = require('./B')
 const SharedB = Capsulable(B)
+const Field = Capsulable()
 
 class C extends SharedB{
     constructor(inherit){

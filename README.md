@@ -131,6 +131,7 @@ If you want the parent and child classes to share data fields in the form of `Pr
 // B.js
 const Capsulable = require('capsulable')
 const A = require('./A')
+const Field = Capsulable()
 
 class B extends A {
     constructor(_field){
@@ -173,6 +174,7 @@ If you already encapsulate an original class as a Capable and want to get that c
 const Capsulable = require('./capsulable')
 const B = require('./B')
 const SharedB = Capsulable(B)
+const Field = Capsulable()
 
 class C extends SharedB{
     constructor(inherit){
