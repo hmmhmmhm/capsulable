@@ -36,7 +36,9 @@ function Capsulator (Origin, inherit){
     }
 
     // Configure encapsulated class.
-    return Capsulable(Origin, Field())
+    let mode = undefined
+    if(typeof inherit == 'string') mode = inherit
+    return Capsulable(Origin, Field(), mode)
 }
 
 module.exports = Capsulator

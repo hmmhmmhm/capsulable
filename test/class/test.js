@@ -76,4 +76,18 @@ module.exports = ()=>{
     // Protected Test
     // Protected Static Test
     UnitTest(packB, packC)
+
+
+    // Final mode Test
+    let FinalClass = Capsulable(A, 'final')
+    class FailureClass extends FinalClass{
+        constructor(inherit){
+            let hook = {}
+            super(hook)
+            assert(typeof hook['field'] === 'undefined')
+            // Field(this, hook.field)
+            // if(inherit) Capsulable(hook, inherit)
+        }
+    }
+    new FailureClass()
 }

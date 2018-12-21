@@ -8,7 +8,7 @@ Pure JavaScript class encapsulation implementation module
 
 <img src="https://image.flaticon.com/icons/svg/822/822143.svg" alt="icon" width="150"/>
 
-Encapsulated modules help you use the concept of access limiting in JavaScript classes. Implement the concepts of encapsulation and concealment through the concept of closure variables.
+Encapsulated modules help you use the concept of access limiting in JavaScript classes. Implement the concepts of encapsulation and concealment through the concept of closure.
 
 
 [한국어 문서는 여기로 와주세요](https://github.com/hmmhmmhm/capsulable/blob/master/README-KR.md)
@@ -33,7 +33,7 @@ Of course it doesn't matter. However, if you want to create a different private 
 
 ## How to define encapsulated classes
 
-Capable shares the data field through the `constructor` function of `class`. (This means that the Capable is ultimately always composed of child classes.) Classes that want to be encapsulated must inherit the data fields from the Coonstructr through the Capsulable in advance. Examples of grammar are marked as ES5, but can be implemented using ES6 via the Babel.
+Capable shares the data field through the `constructor` function of `class`. (This means that the Capable is ultimately always composed of child classes.) Classes that want to be encapsulated must inherit the data fields from the constructor through the Capsulable in advance. Examples of grammar are marked as ES5, but can be implemented using ES6 via the Babel.
 
 ### Example of class definition
 
@@ -268,6 +268,25 @@ packages._unload(D)
 ```
 --------------------------------------
 
+## Implement Final Class
+
+If you no longer want to create a derived class after the encapsulation of a class prototype, you can use the Capsulable function to apply final mode as a second factor to avoid sharing derived classes and data fields. (This does not completely block a class from being derived, but can prevent data fields from being shared.)
+
+```js
+// index.js
+const Capsulable = require('./capsulable')
+const A = require('./A')
+
+// If you write final in the second parameter,
+// the derived class and the data fields are not shared.
+const SharedA = Capsulable(A, 'final')
+
+// Can create instances through encapsulated classes.
+let sharedA = new SharedA()
+```
+
+--------------------------------------
+
 ## Worklist
 
 - [x] Implementing Private Variables
@@ -281,9 +300,10 @@ packages._unload(D)
 - [x] Add and re-encapsulate inheritance classes after encapsulation
 - [x] Implement test units
 - [x] Implement complete exclusion of dependencies by modularizing asset
+- [x] Implement final class
+- [ ] Implement final variable
 - [ ] Implementing the constructor variable variable factor of the encapsulated class
 - [ ] Implementing derivative class sharing with constructor variable of encapsulated class
-- [ ] Implement final keyword function
 --------------------------------------
 
 ## LICENSE
