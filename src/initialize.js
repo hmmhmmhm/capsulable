@@ -1,6 +1,6 @@
 const Private = require('./private')
 const Protected = require('./protected')
-const ProtectedStatic = require('./protected-static')
+const ProtectedStatic = require('./protected')
 
 const Field = require('./field')
 
@@ -37,10 +37,9 @@ module.exports = ()=>{
          * @param {function} Origin
          * @returns {Field}
          */
-        return (Origin)=>{
+        return (_instance)=>{
 
-            const _private = Private()
-            if(Origin !== undefined) _private.register(Origin)
+            const _private = Private(_instance)
 
             /**
              * @description

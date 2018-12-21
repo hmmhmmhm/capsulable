@@ -44,9 +44,10 @@ const validate = (reference, originInstance)=>{
 }
 
 /**
+ * @param {function} _instance
  * @returns {Private} instance
  */
-module.exports = ()=>{
+module.exports = (_instance)=>{
 
     var store = []
     var originInstance = undefined
@@ -187,5 +188,55 @@ module.exports = ()=>{
             return true
         }
     }
-    return new Private()
+
+    const _private = new Private()
+
+    if(_instance !== undefined){
+        class GuidedPrivate{
+            /**
+             * @param {string} key 
+             */
+            get(key){
+                return _private.get(_instance, key)
+            }
+
+            getAll(){
+                return _private.getAll(_instance)
+            }
+            
+            /**
+             * @param {string} key
+             * @param {*} data
+             * @returns {boolean} isSuccess
+             */
+            set(key, data){
+                return _private.set(_instance, key, data)
+            }
+            
+            /**
+             * @param {string} key
+             * @returns {boolean} isSuccess
+             */
+            remove(key){
+                return _private.remove(_instance, key)
+            }
+            
+            /**
+             * @returns {boolean} isSuccess
+             */
+            removeAll(){
+                return _private.removeAll(_instance)
+            }
+            
+            /**
+             * @param {string} key
+             * @returns {boolean} isExist
+             */
+            exist(key){
+                return _private.exist(_instance, key)
+            }
+        }
+        return new GuidedPrivate()
+    }
+    return _private
 }

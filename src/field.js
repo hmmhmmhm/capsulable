@@ -1,6 +1,4 @@
-/**
- * @returns {Field}
- */
+
 module.exports = (_private, _protected, _protectedStatic)=>{
     /**
      * @description
@@ -8,7 +6,7 @@ module.exports = (_private, _protected, _protectedStatic)=>{
      * All the space, such as Private, Protected,
      * and ProtectedStatic, is provided in a single field.
      */
-    return class Field {
+    class Field {
         /**
          * @returns {Private}
          */
@@ -28,4 +26,5 @@ module.exports = (_private, _protected, _protectedStatic)=>{
             return _protectedStatic
         }
     }
+    return Field
 }

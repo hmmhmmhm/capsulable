@@ -1,11 +1,11 @@
+const Capsulable = require('../../')
+const Field = Capsulable()
 const A = require('./a')
-var field = null
 
 class B extends A{
     constructor(_field){
         super(_field)
-        if(!field)
-            field = _field(B)
+        Field(this, _field)
     }
 }
 

@@ -1,8 +1,17 @@
 const Field = require('./src/initialize')
 const Packages = require('./src/packages')
 const Capsulable = require('./src/capsulable')
+const Helper = require('./src/helper')
 
-module.exports = (Origin, inherit)=>{
+/**
+ * @param {*} Origin 
+ * @param {*} inherit 
+ * @returns {Helper}
+ */
+function Capsulator (Origin, inherit){
+
+    if(Origin === undefined && inherit === undefined)
+        return Helper()
 
     // After class encapsulation, when implementing an
     // inheritance class, it is also available as a
@@ -29,3 +38,5 @@ module.exports = (Origin, inherit)=>{
     // Configure encapsulated class.
     return Capsulable(Origin, Field())
 }
+
+module.exports = Capsulator

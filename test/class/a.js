@@ -1,16 +1,36 @@
-var field = null
+const Capsulable = require('../../')
+const Field = Capsulable()
 
 class A {
     constructor(_field){
-        if(!field)
-            field = _field(A)
+        Field(this, _field)
     }
+
     getPrivate(){
-        return field.private.get(this, 'name')
+        return Field(this)
+                .private.get('name')
     }
     setPrivate(name){
-        return field.private.set(this, 'name', name)
+        return Field(this)
+                .private.set('name', name)
+    }
+
+    getProtected(){
+        return Field(this)
+                .protected.get('A', 'age')
+    }
+    setProtected(age){
+        return Field(this)
+                .protected.set('A', 'age', age)
+    }
+
+    getProtectedStatic(){
+        return Field(this)
+                .protectedStatic.get('A', 'version')
+    }
+    setProtectedStatic(version){
+        return Field(this)
+                .protectedStatic.set('A', 'version', version)
     }
 }
-
 module.exports = A

@@ -1,6 +1,6 @@
 const _private = require('./private')
 const _protected = require('./protected')
-const _protectedStatic = require('./protected-static')
+const _protectedStatic = require('./protected')
 
 /**
  * @returns {function} Capsule
