@@ -7,5 +7,14 @@
     "test": "node ./test/test.js"
   },
   "author": "hmmhmmhm",
-  "license": "MIT"
+  "license": "MIT",
+  "keywords": [
+    "encapsulation",
+    "encapsule",
+    "oop",
+    "javascript",
+    "private-variables",
+    "package",
+    "object-oriented-javascript"
+  ]
 }
