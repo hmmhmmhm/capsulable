@@ -11,7 +11,7 @@ Pure JavaScript class encapsulation implementation module
 Encapsulated modules help you use the concept of access limiting in JavaScript classes. Implement the concepts of encapsulation and concealment through the concept of closure variables.
 
 
-[![한국어 문서는 요기로](https://github.com/hmmhmmhm/capsulable/blob/master/README-KR.md)]()
+[한국어 문서는 여기로 와주세요](https://github.com/hmmhmmhm/capsulable/blob/master/README-KR.md)
 
 
 ## Installation
